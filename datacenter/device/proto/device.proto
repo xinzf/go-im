@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package proto;
+
+service Device {
+	rpc Online(OnlineRequest) returns (DetailResponse) {}
+	rpc Offline(OfflineRequest) returns (OperationResponse) {}
+	rpc List(ListRequest) returns (ListResponse) {}
+	rpc Detail(DetailRequest) returns (DetailResponse) {}
+}
+
+message OnlineRequest {
+	string iid = 1;
+	string node = 2;
+	map<string,string> props = 3;
+}
+
+message OfflineRequest {
+	string iid = 1;
+	string deviceId = 2;
+}
+
+message ListRequest {
+	string iid = 1;
+}
+
+message DetailRequest {
+	string iid = 1;
+	string deviceId = 2;
+}
+
+message DetailResponse {
+	string deviceId = 1;
+	string iid = 2;
+	string onlineTime = 3;
+	string node = 4;
+	map<string,string> props = 5;
+}
+
+message OperationResponse {
+	bool ret = 1;
+	int32 code = 2;
+	string msg = 3;
+}
+
+message ListResponse {
+	repeated DetailResponse devices = 1;
+}

@@ -1,0 +1,15 @@
+name: "im.datacenter.device"
+
+version: "1.0.0"
+
+redis:
+  host: "localhost:6379"
+  password: ""
+  db: 0
+  maxopenconns: 20
+  maxidleconns: 20
+  
+discovery:
+  addrs: "192.168.31.152:2181"
+  ttl: 10
+  interval: 30

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package proto;
+
+service User {
+	rpc Detail(DetailRequest) returns (DetailResponse) {}
+	rpc Create(CreateRequest) returns (DetailResponse) {}
+}
+
+message DetailRequest {
+	string iid = 1;
+}
+
+message CreateRequest {
+	string iid = 1;
+	string name = 2;
+	string icon = 3;
+	map<string,string> props = 4;
+	string createAt = 5;
+}
+
+message DetailResponse {
+	string iid = 1;
+	string name = 2;
+	string icon = 3;
+	map<string,string> props = 4;
+	string createAt = 5;
+}

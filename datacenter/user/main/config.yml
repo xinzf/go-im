@@ -1,0 +1,23 @@
+name: "im.datacenter.user"
+
+version: "1.0.0"
+
+db:
+  host: ""
+  user: "root"
+  pswd: ""
+  name: "im"
+  maxopenconns: 101
+  maxidleconns: 101
+
+redis:
+  host: "localhost:6379"
+  password: ""
+  db: 0
+  maxopenconns: 20
+  maxidleconns: 20
+  
+discovery:
+  addrs: "192.168.31.152:2181"
+  ttl: 10
+  interval: 30
